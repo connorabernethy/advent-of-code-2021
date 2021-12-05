@@ -8,9 +8,11 @@ def check_board(board):
 
 f = open("input.txt")
 total = 0
+win = 0
+final = []
 list = f.readlines()
 
-print(len(list))
+# print(len(list))
 
 
 # Parse input numbers:
@@ -51,11 +53,9 @@ while j < len(list) + 5:
 
 index = 0
 # print(boards)
-print(len(boards))
-print(boards[0])
-print(len(boards[0]))
 
 # boards is a list of lists of dictionaries, with each list of size 25 dicts.
+newBoard = []
 
 for number in inputList:
     for board in boards:
@@ -68,43 +68,71 @@ for number in inputList:
                     win = board[index][0]
                     total = check_board(board)
                     print(total * win)
+                    newBoard = board
+                    #exit(0)
                 elif board[5][1] == True and board[6][1] == True and board[7][1] == True and board[8][1] == True and board[9][1] == True:
                     win = board[index][0]
                     total = check_board(board)
                     print(total * win)
+                    newBoard = board
+                    #exit(0)
                 elif board[10][1] == True and board[11][1] == True and board[12][1] == True and board[13][1] == True and board[14][1] == True:
                     win = board[index][0]
                     total = check_board(board)
                     print(total * win)
+                    newBoard = board
+                    #exit(0)
                 elif board[15][1] == True and board[16][1] == True and board[17][1] == True and board[18][1] == True and board[19][1] == True:
                     win = board[index][0]
                     total = check_board(board)
                     print(total * win)
+                    newBoard = board
+                    #exit(0)
                 elif board[20][1] == True and board[21][1] == True and board[22][1] == True and board[23][1] == True and board[24][1] == True:
                     win = board[index][0]
                     total = check_board(board)
                     print(total * win)
+                    newBoard = board
+                    #exit(0)
                 elif board[0][1] == True and board[5][1] == True and board[10][1] == True and board[15][1] == True and board[20][1] == True:
                     win = board[index][0]
                     total = check_board(board)
                     print(total * win)
+                    newBoard = board
+                    #exit(0)
                 elif board[1][1] == True and board[6][1] == True and board[11][1] == True and board[16][1] == True and board[21][1] == True:
                     win = board[index][0]
                     total = check_board(board)
                     print(total * win)
+                    newBoard = board
+                    #exit(0)
                 elif board[2][1] == True and board[7][1] == True and board[12][1] == True and board[17][1] == True and board[22][1] == True:
                     win = board[index][0]
                     total = check_board(board)
                     print(total * win)
+                    newBoard = board
+                    #exit(0)
                 elif board[3][1] == True and board[8][1] == True and board[13][1] == True and board[18][1] == True and board[23][1] == True:
                     win = board[index][0]
                     total = check_board(board)
                     print(total * win)
+                    newBoard = board
+                    #exit(0)
                 elif board[4][1] == True and board[9][1] == True and board[14][1] == True and board[19][1] == True and board[24][1] == True:
                     win = board[index][0]
                     total = check_board(board)
                     print(total * win)
+                    newBoard = board
+                    #exit(0)
+                else:
+                    final = newBoard
 
             index +=1
+
+    total = check_board(final)
+    print(final)
+    print("Win: ")
+    print(win)
+    print(win * total)
     index = 0
     count = 0
